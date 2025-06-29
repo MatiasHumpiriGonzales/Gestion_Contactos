@@ -10,6 +10,13 @@ struct contactoEmail {
     string email;
     string nacionalidad;
 };
+			string obtenerServidor(string correo) {
+            size_t pos = correo.find('@');
+            if (pos != string::npos) {
+            return correo.substr(pos + 1);
+        }
+        return "";
+}
 int main () {
     contactoEmail est[MAX_CONTACTOS];
     int total_contactos = 0;
@@ -87,19 +94,12 @@ int main () {
 				}
 				break;
 			}
-			string obtenerServidor(string correo) {
-            size_t pos = correo.find('@');
-            if (pos != string::npos) {
-            return correo.substr(pos + 1);
-        }
-        return "";
-    }
 		    case 4: {
 				if (total_contactos == 0){
 					cout << "No hay contactos registrados\n";
 				} else {
 					for (int i = 0; i < total_contactos - 1; i++){
-						for (int j = 0, j < total_contactos - i - 1; j++){
+						for (int j = 0;j < total_contactos - i - 1; j++){
 							if(obtenerServidor(est[j].email) > obtenerServidor(est[j+1].email)){
 								contactoEmail temp = est[j];
 								est[j] = est[j + 1];
@@ -119,6 +119,18 @@ int main () {
 				}
 				break;
 			}
+			case 5:{
+				cout << "Saliendo del programa.\n";
+				break;
+			}
+			default:
+				cout << "Opcion invalida.\n";
+			}
+	}while (opcion != 5);
+	return 0;
+}
+	
+		     
 			
 			
  
