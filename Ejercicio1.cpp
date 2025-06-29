@@ -50,4 +50,26 @@ int main () {
             cout << "Contacto agregado.\n";
             break;
             }
+            case 2: {
+            	string nombreBuscar;
+            	cout << "Ingrese el nombre completo del contacto a eliminar que desea: ";
+            	getline(cin, nombreBuscar);
+            	bool encontrado = false;
+            	for (int i = 0; i < total_contactos; i++){
+            		if(est[i].nombreCompleto ==nombreBuscar) {
+            			for (int j = i; j < total_contactos - 1; j++) {
+            				est[j] = est[j + 1];
+						}
+						total_contactos--;
+						encontrado = true;
+						cout << "Contacto eliminado.\n";
+						break;
+					}
+				}
+				if (!encontrado) {
+					cout << "No se encontro el contacto.\n";
+				}
+				break;
+			}
+			
  
