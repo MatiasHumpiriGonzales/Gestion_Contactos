@@ -24,5 +24,30 @@ int main () {
         cout << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore();
-}
+        
+        switch (opcion) {
+        	case 1: {
+        		if (total_contactos >= MAX_CONTACTOS){
+        			cout << "No se puede agregar mas contactos.\n";
+			    break;
+			}
+			contactoEmail a;
+			cout << "Nombre completo: ";
+            getline(cin, a.nombreCompleto);
+            cout << "Sexo (M/F): ";
+            cin >> a.sexo;
+            cout << "Edad: ";
+            cin >> a.edad;
+            cin.ignore();
+            cout << "Telefono: ";
+            getline(cin, a.telefono);
+            cout << "Email: ";
+            getline(cin, a.email);
+            cout << "Nacionalidad: ";
+            getline(cin, a.nacionalidad);
+            est[total_contactos] = a;
+            total_contactos++;
+            cout << "Contacto agregado.\n";
+            break;
+            }
  
