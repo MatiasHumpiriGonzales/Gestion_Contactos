@@ -71,5 +71,21 @@ int main () {
 				}
 				break;
 			}
+			case 3: {
+				if (total_contactos == 0){
+					cout << "No hay contactos registrado.\n";
+				} else {
+					for (int i = 0; i < total_contactos; i++){
+						cout << "Nombre: " << est[i].nombreCompleto << endl;
+                        cout << "Sexo: " << est[i].sexo << endl;
+                        cout << "Edad: " << est[i].edad << endl;
+                        cout << "Telefono: " << est[i].telefono << endl;
+                        cout << "Email: " << est[i].email << endl;
+                        cout << "Nacionalidad: " << est[i].nacionalidad << endl;
+                        cout << "--------------------------\n";
+					}
+				}
+				break;
+			}
 			
  
